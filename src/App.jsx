@@ -12,7 +12,6 @@ function App() {
       <div>
         <h1> Trip Planner</h1>
         <Button>Click me</Button>
-        <h2 className='m-0 mt-0 '> cow is {count}</h2>
         <button onClick={() => setCount(count + 1)}>+</button>
       </div>
     </>
