@@ -12,7 +12,7 @@ function App() {
       <div>
         <h1> Trip Planner</h1>
         <Button>Click me</Button>
-        <Button>Click me</Button>
+        
         <button onClick={() => setCount(count + 1)}>+</button>
       </div>
     </>
