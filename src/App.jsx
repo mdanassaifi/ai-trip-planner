@@ -11,6 +11,7 @@ function App() {
     <>
       <div>
         <h1> Trip Planner</h1>
+        <p>This is a Trip Planner App</p>
         <Button>Click me</Button>
         
         <button onClick={() => setCount(count + 1)}>+</button>
