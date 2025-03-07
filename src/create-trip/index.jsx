@@ -5,6 +5,7 @@ function CreateTrip() {
     <div>Createtrip</div>
     
   )
+  
 }
 
 export default CreateTrip
