@@ -12,9 +12,9 @@ function CreateTrip() {
       <div> 
         <h2 className='text-xl my-3 font-medium'>What is Destination of Choice ?</h2>
      
-        <GooglePlacesAutocomplete
+        {/* <GooglePlacesAutocomplete
           apiKey=''
-        />
+        /> */}
 
       </div>
 
