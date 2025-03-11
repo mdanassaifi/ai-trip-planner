@@ -1,4 +1,5 @@
 import { Input } from '@/components/ui/input';
+import { SelectBudgetOptions, SelectTravelesList } from '@/constant/options';
 import React from 'react'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 
@@ -9,7 +10,7 @@ function CreateTrip() {
       <h2 className='font-bold text-3xl'>Tell us your Travel Preferences 🎋</h2>
       <p className='mt-3 text-gray-500 text-xl'>Just Provide some basic information, and our trip planner will generate a customized itinerary based on your Preferences.</p>
     
-    <div className='mt-20 flex flex-col gap-5'>
+     <div className='mt-20 flex flex-col gap-8'>
 
       <div> 
         <h2 className='text-xl my-3 font-medium'>What is Destination of Choice ? 🎯</h2>
@@ -28,7 +29,45 @@ function CreateTrip() {
             </div>
     
       </div>
-    </div>
+
+      <div>
+        <h2 className='text-xl my-3 font-medium'>What is Your Budget ?</h2>
+        <div className='grid grid-cols-3 gap-5 mt-5'>
+          {SelectBudgetOptions.map((item,index)=>(
+            <div key={index}
+              onClick={()=>handleInputChange('budget',item.title)} 
+            className={`p-4 border cursor-pointer 
+            rounded-lg hover:shadow-lg
+            ${FormData.budget == item.title && 'shadow-lg border-black'}
+            `}>
+              <h2 className='text-4xl'>{item.icon}</h2>
+              <h2 className='font-bold text-lg'>{item.title}</h2>
+              <h2 className='text-sm text-gray-500'>{item.desc}</h2>
+            </div>
+          ))}
+        </div>
+       </div>
+
+       <div>
+        <h2 className='text-xl my-3 font-medium'>Who do you Plan on travelling with on your next Adventure ?</h2>
+        <div className='grid grid-cols-3 gap-5 mt-5'>
+          {SelectTravelesList.map((item,index)=>(
+            <div key={index} 
+              onClick={()=>handleInputChange('people',item.people)}
+            className={`p-4 border cursor-pointer rounded-lg 
+            hover:shadow-lg
+            ${FormData.people == item.people && 'shadow-lg border-black'}
+            `}>
+              <h2 className='text-4xl'>{item.icon}</h2>
+              <h2 className='font-bold text-lg'>{item.title}</h2>
+              <h2 className='text-sm text-gray-500'>{item.desc}</h2>
+            </div>
+          ))}
+        </div>
+       </div>
+        </div>
+
+    
     
   )
   
