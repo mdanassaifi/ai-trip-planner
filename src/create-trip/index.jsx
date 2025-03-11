@@ -48,7 +48,7 @@ function CreateTrip() {
        </div>
 
           <div>
-        <h2 className='text-xl my-3 font-medium'>Who doaaa you Plan on travelling with on your next Adventure ?</h2>
+        <h2 className='text-xl my-3 font-medium'>Who do you Plan on travelling with on your next Adventure ?</h2>
             <div className='grid grid-cols-3 gap-5 mt-5'>
           {SelectTravelesList.map((item,index)=>(
             <div key={index} 
