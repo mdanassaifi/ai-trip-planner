@@ -9,7 +9,7 @@ function CreateTrip() {
       <h2 className='font-bold text-3xl'>Tell us your Travel Preferences 🎋</h2>
       <p className='mt-3 text-gray-500 text-xl'>Just Provide some basic information, and our trip planner will generate a customized itinerary based on your Preferences.</p>
     
-    <div className='mt-20'>
+    <div className='mt-20 flex flex-col gap-5'>
 
       <div> 
         <h2 className='text-xl my-3 font-medium'>What is Destination of Choice ? 🎯</h2>
