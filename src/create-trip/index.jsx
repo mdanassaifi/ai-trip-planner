@@ -9,6 +9,16 @@ function CreateTrip() {
 
   const [FormData,setFormData] = React.useState([]);
   const handleInputChange = (name,value) => {
+
+    if(name=='noOfDays'&&value>5)  
+    {
+      console.log("Please enter Trip Days Less than 5")
+      return ;
+    }
+    
+
+
+
     setFormData({ 
       ...FormData,
       [name]:value
