@@ -35,19 +35,19 @@ export const SelectBudgetOptions = [
         id:1,
         title:'Budget',
         desc:'Economy Stay, Travel & Food',
-        icon:'💰',
+        icon:'💱',
     },
     {
         id:2,
         title:'Standard',
         desc:'Keep cost on the average side',
-        icon:'💵',
+        icon:'⚖️',
     },
     {
         id:3,
         title:'Luxury',
         desc:'Dont worry about the cost',
-        icon:'💎',
+        icon:'💎ᴠɪᴘ',
     },
 ]
 

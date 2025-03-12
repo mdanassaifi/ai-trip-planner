@@ -6,6 +6,19 @@ import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 
 function CreateTrip() {
   const [place,setPlace] = React.useState(null)
+
+  const [FormData,setFormData] = React.useState([]);
+  const handleInputChange = (name,value) => {
+    setFormData({ 
+      ...FormData,
+      [name]:value
+    })
+  } 
+
+  React.useEffect(()=>{
+    console.log(FormData);
+  },[FormData])
+
   return (
     <div className='sm:px-10 md:px-32 lg:px-56 xl:pl-72 px-5 mt-10'>
       <h2 className='font-bold text-3xl'>Tell us your Travel Preferences 🎋</h2>
@@ -20,13 +33,15 @@ function CreateTrip() {
           apiKey={'import.meta.env.VITE_GOOGLE_API_KEY'}
           selectProps={{
             place,
-            onChange:(v)=>{setPlace(v);console.log(v)},
+            onChange:(v)=>{setPlace(v); handleInputChange('location',v)},
           }}
        
        />
       </div>
-            <div> <h2 className='text-xl my-3 font-medium'>How many Days are you planning your trip ?</h2> 
-              <Input placeholder={'Ex,3'} type="Number" />
+            <div> <h2 className='text-xl my-3 font-medium'>How many Days are you planning your trip ? 🎒🏕️📸</h2> 
+              <Input placeholder={'Minimum-5'} type="Number"  
+             onChange={(e)=>handleInputChange('noOfDays',e.target.value)}
+            />
             </div>
     
       
