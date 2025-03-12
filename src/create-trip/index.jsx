@@ -10,15 +10,7 @@ function CreateTrip() {
   const [FormData,setFormData] = React.useState([]);
   const handleInputChange = (name,value) => {
 
-    if(name=='noOfDays'&&value>5)  
-    {
-      console.log("Please enter Trip Days Less than 5")
-      return ;
-    }
-    
-
-
-
+  
     setFormData({ 
       ...FormData,
       [name]:value
@@ -28,6 +20,17 @@ function CreateTrip() {
   React.useEffect(()=>{
     console.log(FormData);
   },[FormData])
+
+  const OnGenerateTrip=()=>{
+    if(FormData?.noOfDays>5)
+    {
+
+      return;
+    }
+
+    console.log(FormData);
+  }
+
 
   return (
     <div className='sm:px-10 md:px-32 lg:px-56 xl:pl-72 px-5 mt-10'>
@@ -94,7 +97,7 @@ function CreateTrip() {
          </div>
        </div>
                   <div className='my-10 justify-end flex' >
-                     <Button> Generate trip </Button>
+                     <Button onClick={OnGenerateTrip}> Generate trip </Button>
                     </div>
                  
 
