@@ -1,30 +1,30 @@
 export const SelectTravelesList = [
     {
         id:1,
-        title:'Solo',
+        title:'Only Me',
         desc:'A Sole traveles in exploration',
-        icon:'🚶',
+        icon:'𐀪',
         people:'1 People'
     },
     {
         id:2,
         title:'A Couple',
         desc:'Two traveles in tandem',
-        icon:'💑',
+        icon:'𖨆♡𖨆',
         people:'2 People'
     },
     {
         id:3,
         title:'Family',
         desc:'A group of fun loving adv',
-        icon:'👨‍👩‍👧‍👦',
+        icon:'⋆˚𖠋𖠋𖠋*',
         people:'3 to 5 People'
     },
     {
         id:4,
         title:'Friends',
         desc:'A bunch of thrill-seekes',
-        icon:'🤝',
+        icon:'𐦂𖨆𐀪𖠋',
         people:'5 to 10 People'
     },
 ]

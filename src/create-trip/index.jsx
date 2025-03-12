@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { SelectBudgetOptions, SelectTravelesList } from '@/constant/options';
 import React from 'react'
@@ -67,11 +68,15 @@ function CreateTrip() {
 
          </div>
        </div>
+                  <div className='my-10 justify-end flex' >
+                     <Button> Generate trip </Button>
+                    </div>
+                 
 
-    </div> 
-    
+
+
+    </div>  
   )
-  
 }
 
 export default CreateTrip
