@@ -1,8 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { SelectBudgetOptions, SelectTravelesList } from '@/constant/options';
+import { AI_PROMPT, SelectBudgetOptions, SelectTravelesList } from '@/constant/options';
 import React from 'react'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
+import { replace } from 'react-router-dom';
 import { toast } from 'sonner';
 
 function CreateTrip() {
@@ -30,7 +31,15 @@ function CreateTrip() {
       return;
     }
 
-    console.log(FormData);
+    const FINAL_PROMPT=AI_PROMPT
+    .replace('{location}',FormData?.location?.label)
+    .replace('{totalDays}',FormData?.noOfDays)
+    .replace('{people}',FormData?.people)
+    .replace('{budget}',FormData?.budget)
+    .replace('{totalDays}',FormData?.noOfDays)
+
+    console.log(FINAL_PROMPT);
+    
   }
 
 
