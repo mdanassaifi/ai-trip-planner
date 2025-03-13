@@ -23,7 +23,7 @@ function CreateTrip() {
   },[FormData])
 
   const OnGenerateTrip=()=>{
-    if(FormData?.noOfDays>5&&FormData?.location||FormData?.budget||FormData?.people)
+    if(FormData?.noOfDays>5&&FormData?.location||!FormData?.budget||!FormData?.people)
     {
       toast("Please fill all details")
 
@@ -79,7 +79,7 @@ function CreateTrip() {
        </div>
 
           <div>
-        <h2 className='text-xl my-3 font-medium'>Who do you Plan on travelling with on your next Adventure ?</h2>
+        <h2 className='text-xl my-3 font-medium'>Who do you Plan on travelling with on your next Adventure ? 🧐</h2>
             <div className='grid grid-cols-3 gap-5 mt-5'>
           {SelectTravelesList.map((item,index)=>(
             <div key={index} 
