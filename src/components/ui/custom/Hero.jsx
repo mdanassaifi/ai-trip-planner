@@ -8,7 +8,7 @@ function Hero() {
       <h1 className='font-extrabold text-[50px] text-center mt-16'>
         <span className='text-[#f56551]'> Discover Your Next Adventure with AI:</span> Personalized <span className='text-[#311b92]'>Iteneries at Your Fingertips</span>
       </h1>
-      <p className='text-xl text-gray-500 text-center'> Your personal trip planner and travel curator, creating custom itineraries tailored to your interests and budget.</p>
+      <p className='text-xl text-gray-500 text-center'> You personal trip planner and travel curator, creating custom itineraries tailored to your interests and budget.</p>
 
       <Link to='/create-trip'>
         <Button>Get Started it's Free </Button>
