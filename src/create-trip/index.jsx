@@ -6,13 +6,25 @@ import React from 'react'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 import { replace } from 'react-router-dom';
 import { toast } from 'sonner';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { FcGoogle } from "react-icons/fc";
+import { LogIn } from 'lucide-react';
+import { useGoogleLogin } from '@react-oauth/google';
+
 
 
 function CreateTrip() {
   const [place,setPlace] = React.useState(null)
 
   const [FormData,setFormData] = React.useState({});
-  const [openDialog,setOpenDialog] = React.useState();
+  const [openDialog,setOpenDialog] = React.useState(false);
   const handleInputChange = (name,value) => {
 
   
@@ -26,13 +38,20 @@ function CreateTrip() {
     console.log(FormData);
   },[FormData])
 
+  const login=useGoogleLogin({
+    onSuccess:(codeResp)=>console.log(codeResp),
+    onerror:(error)=>console.log(error)
+  })
+
   const OnGenerateTrip=async()=>{
     
-    const user=localStorage.getItem('user ');
+    const user=localStorage.getItem('user');
 
     if(!user)
     {
+      setOpenDialog(true);
       return;
+
     }
 
 
@@ -130,7 +149,27 @@ function CreateTrip() {
                   <div className='my-10 justify-end flex' >
                      <Button onClick={OnGenerateTrip}> Generate trip </Button>
                     </div>
-                 
+
+              <Dialog open={openDialog}>
+          
+          <DialogContent>
+            <DialogHeader>
+             
+              <DialogDescription>
+                <img src="/logo.svg"/>
+                <h2 className='font-bold text-lg mt-7'>Sign In With Google</h2>
+                <p>Sign in to the App with Google authentication securly </p>
+            
+            <Button 
+            onClick={login}
+              className="w-full mt-5 fles gap-4 items-center">
+              <FcGoogle className='h-7 w-7' />
+              Sign In With Google </Button>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+            
 
 
 
