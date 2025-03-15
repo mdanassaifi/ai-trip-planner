@@ -12,6 +12,7 @@ function CreateTrip() {
   const [place,setPlace] = React.useState(null)
 
   const [FormData,setFormData] = React.useState({});
+  const [openDialog,setOpenDialog] = React.useState();
   const handleInputChange = (name,value) => {
 
   
@@ -27,6 +28,15 @@ function CreateTrip() {
 
   const OnGenerateTrip=async()=>{
     
+    const user=localStorage.getItem('user ');
+
+    if(!user)
+    {
+      return;
+    }
+
+
+
     if((FormData?.noOfDays>5&&FormData?.location)||!FormData?.budget||!FormData?.people)
     {
       toast("Please fill all details")
